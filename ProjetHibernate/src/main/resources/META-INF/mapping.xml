@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.example.projethibernate.entity.Visiter" table="VISITER">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="codeMed" column="codemed" />
+        <property name="codePat" column="codepat" />
+        <property name="date" column="date" />
+    </class>
+
+    <class name="com.example.projethibernate.entity.Medecin" table="MEDECIN">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="codemed" column="codemed" />
+        <property name="nom" column="nom" />
+        <property name="prenom" column="prenom" />
+        <property name="grade" column="grade" />
+    </class>
+
+    <class name="com.example.projethibernate.entity.Patient" table="PATIENT">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="codeMed" column="codemed" />
+        <property name="codePat" column="codepat" />
+        <property name="date" column="date" />
+    </class>
+
+
+</hibernate-mapping>
