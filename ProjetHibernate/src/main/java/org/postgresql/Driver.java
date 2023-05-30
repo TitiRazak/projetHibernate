@@ -1,6 +1,5 @@
 package org.postgresql;
 
-import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
@@ -8,7 +7,7 @@ public class Driver {
 
     public void connect() {
         try {
-            String url = "jdbc:postgresql://localhost/dbproj";
+            String url = "jdbc:postgresql://localhost/hibernatedatab";
             String user = "mb14";
             String password = "tianay";
             DriverManager.getConnection(url, user, password);

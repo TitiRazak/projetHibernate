@@ -4,35 +4,32 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="com.example.projethibernate.entity.Visiter" table="VISITER">
-        <id name="id" type="int">
-            <column name="id" />
-            <generator class="identity" />
+        <id name="codeMed" type="java.lang.String">
+            <column name="codemed"/>
+            <generator class="assigned"/>
         </id>
-        <property name="codeMed" column="codemed" />
-        <property name="codePat" column="codepat" />
-        <property name="date" column="date" />
+        <property name="codePat" column="codepat"/>
+        <property name="date" column="date"/>
     </class>
 
     <class name="com.example.projethibernate.entity.Medecin" table="MEDECIN">
-        <id name="id" type="int">
-            <column name="id" />
-            <generator class="identity" />
+        <id name="codemed" type="java.lang.String">
+            <column name="codemed"/>
+            <generator class="assigned"/>
         </id>
-        <property name="codemed" column="codemed" />
-        <property name="nom" column="nom" />
-        <property name="prenom" column="prenom" />
-        <property name="grade" column="grade" />
+        <property name="nom" column="nom"/>
+        <property name="prenom" column="prenom"/>
+        <property name="grade" column="grade"/>
     </class>
 
     <class name="com.example.projethibernate.entity.Patient" table="PATIENT">
-        <id name="id" type="int">
-            <column name="id" />
-            <generator class="identity" />
+        <id name="codepat" type="java.lang.String">
+            <column name="codepat"/>
+            <generator class="assigned"/>
         </id>
-        <property name="codeMed" column="codemed" />
-        <property name="codePat" column="codepat" />
-        <property name="date" column="date" />
+        <property name="nom" column="nom"/>
+        <property name="prenom" column="prenom"/>
+        <property name="sexe" column="sexe"/>
+        <property name="adresse" column="adresse"/>
     </class>
-
-
 </hibernate-mapping>

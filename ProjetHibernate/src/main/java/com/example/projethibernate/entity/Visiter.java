@@ -6,38 +6,36 @@ import org.hibernate.annotations.Table;
 import java.sql.Date;
 
 @Entity
-@Table(appliesTo = "VISITER")
+@Table(appliesTo = "visiter")
 public class Visiter {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name="codemed")
-    private int codeMed;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "codemed")
+    private String codeMed;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "codepat")
+    private String codePat;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "date")
+    private Date date;
 
-    public Object getCodeMed() {
+    public String getCodeMed() {
         return codeMed;
     }
 
-    public void setCodeMed(int codeMed) {
+    public void setCodeMed(String codeMed) {
         this.codeMed = codeMed;
     }
 
-    @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name="codepat")
-    private int codePat;
-
-    public Object getCodePat() {
+    public String getCodePat() {
         return codePat;
     }
 
-    public void setCodePat(int codePat) {
+    public void setCodePat(String codePat) {
         this.codePat = codePat;
     }
-
-    @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name="date")
-    private Date date;
 
     public Date getDate() {
         return date;

@@ -4,12 +4,12 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.Table;
 
 @Entity
-@Table(appliesTo = "MEDECIN")
+@Table(appliesTo = "medecin")
 public class Medecin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "codemed")
-    private Integer codemed;
+    private String codemed;
 
     @Column(name = "Nom")
     private String nom;
@@ -20,11 +20,18 @@ public class Medecin {
     @Column(name = "Grade")
     private String grade;
 
-    public int getCodemed() {
+    public Medecin(String codemed, String nom, String prenom, String grade) {
+    }
+
+    public Medecin() {
+
+    }
+
+    public String getCodemed() {
         return codemed;
     }
 
-    public void setCodemed(int codemed) {
+    public void setCodemed(String codemed) {
         this.codemed = codemed;
     }
 
