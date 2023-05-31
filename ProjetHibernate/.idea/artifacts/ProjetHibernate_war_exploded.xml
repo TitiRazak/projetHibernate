@@ -28,6 +28,7 @@
           <element id="library" level="project" name="Maven: com.github.MadaraFsl:HibernateUtil:1.0" />
           <element id="library" level="project" name="Maven: org.jetbrains:annotations:24.0.1" />
           <element id="library" level="project" name="guicedee.services.javax.servlet.api" />
+          <element id="library" level="project" name="postgresql" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="ProjetHibernate/web/Web" />

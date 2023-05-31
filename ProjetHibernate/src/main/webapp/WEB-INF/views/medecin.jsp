@@ -12,7 +12,7 @@
 <h1>Gestion des médecins</h1>
 
 <h2>Ajouter ou mettre à jour un médecin</h2>
-<form action="medecincontroller" method="post">
+<form action="medecincontroller?action=add" method="post">
     <label for="codemed">Code Médecin:</label>
     <input type="text" id="codemed" name="codemed"><br><br>
     <label for="nom">Nom:</label>

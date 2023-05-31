@@ -29,6 +29,28 @@
     </style>
 </head>
 <body>
+
+<h2>Ajouter ou mettre à jour un patient</h2>
+<form action="patientcontroller?action=add" method="post">
+    <label for="id">ID:</label>
+    <input type="text" id="id" name="id"><br><br>
+    <label for="nom">Nom:</label>
+    <input type="text" id="nom" name="nom"><br><br>
+    <label for="prenom">Prénom:</label>
+    <input type="text" id="prenom" name="prenom"><br><br>
+    <label for="sexe">Sexe:</label>
+    <select id="sexe" name="sexe">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select>
+    <label for="adresse">Adresse:</label>
+    <input type="text" id="adresse" name="adresse"><br><br>
+    <br><br>
+    <input type="submit" value="Enregistrer">
+</form>
+
+
+
 <h1>Liste des patients</h1>
 
 <form action="patientcontroller" method="GET">

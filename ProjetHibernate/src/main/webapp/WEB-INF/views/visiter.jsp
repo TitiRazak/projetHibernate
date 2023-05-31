@@ -34,7 +34,7 @@
 <body>
 <h1>Visiteurs</h1>
 
-<form action="visitercontroller" method="POST">
+<form action="visitercontroller?action=add" method="POST">
     <input type="hidden" name="action" value="add">
 
     <label for="codemed">Médecin:</label>
