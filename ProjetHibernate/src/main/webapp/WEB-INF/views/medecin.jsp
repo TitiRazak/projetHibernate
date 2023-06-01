@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ page import="java.util.List" %>
 <%@ page import="com.example.projethibernate.entity.Medecin" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,10 +36,14 @@
     <% if (medecins != null) { %>
     <% for (Medecin medecin : medecins) { %>
     <tr>
-        <td><%= medecin.getCodemed() %></td>
-        <td><%= medecin.getNom() %></td>
-        <td><%= medecin.getPrenom() %></td>
-        <td><%= medecin.getGrade() %></td>
+        <td><%= medecin.getCodemed() %>
+        </td>
+        <td><%= medecin.getNom() %>
+        </td>
+        <td><%= medecin.getPrenom() %>
+        </td>
+        <td><%= medecin.getGrade() %>
+        </td>
         <td>
             <a href="medecinServlet?action=delete&codemed=<%= medecin.getCodemed() %>">Supprimer</a>
         </td>

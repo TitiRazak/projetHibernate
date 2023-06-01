@@ -21,6 +21,10 @@ public class Medecin {
     private String grade;
 
     public Medecin(String codemed, String nom, String prenom, String grade) {
+        this.codemed=codemed;
+        this.nom=nom;
+        this.prenom=prenom;
+        this.grade=grade;
     }
 
     public Medecin() {
@@ -57,4 +61,5 @@ public class Medecin {
 
     public void setGrade(String grade) {
         this.grade = grade;
-    }}
+    }
+}

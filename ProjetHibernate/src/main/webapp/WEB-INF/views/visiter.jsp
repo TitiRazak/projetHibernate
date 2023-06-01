@@ -35,7 +35,8 @@
 
     <label for="codemed">Médecin:</label>
     <select id="codemed" name="codemed" required>
-        <jsp:useBean id="medecins" scope="request" class="com.example.projethibernate.entity.Medecin" type="java.util.List"/>
+        <jsp:useBean id="medecins" scope="request" class="com.example.projethibernate.entity.Medecin"
+                     type="java.util.List"/>
         <c:forEach var="medecin" items="${medecins}">
             <option value="${medecin.codemed}">${medecin.nom} ${medecin.prenom}</option>
         </c:forEach>
@@ -43,7 +44,8 @@
 
     <label for="codepat">Patient:</label>
     <select id="codepat" name="codepat" required>
-        <jsp:useBean id="patients" scope="request" class="com.example.projethibernate.entity.Patient" type="java.util.List"/>
+        <jsp:useBean id="patients" scope="request" class="com.example.projethibernate.entity.Patient"
+                     type="java.util.List"/>
         <c:forEach var="patient" items="${patients}">
             <option value="${patient.codepat}">${patient.nom} ${patient.prenom}</option>
         </c:forEach>
@@ -63,7 +65,8 @@
         <th>Code patient</th>
         <th>Date de visite</th>
     </tr>
-    <jsp:useBean id="visiters" scope="request" class="com.example.projethibernate.entity.Visiter" type="java.util.List"/>
+    <jsp:useBean id="visiters" scope="request" class="com.example.projethibernate.entity.Visiter"
+                 type="java.util.List"/>
     <c:forEach var="visiter" items="${visiters}">
         <tr>
             <td>${visiter.medecin.codemed}</td>

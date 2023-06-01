@@ -5,6 +5,11 @@ import java.sql.SQLException;
 
 public class Driver {
 
+    public static void main(String[] args) {
+        Driver driver = new Driver();
+        driver.connect();
+    }
+
     public void connect() {
         try {
             String url = "jdbc:postgresql://localhost/hibernatedatab";
@@ -15,10 +20,5 @@ public class Driver {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-    }
-
-    public static void main(String[] args) {
-        Driver driver = new Driver();
-        driver.connect();
     }
 }

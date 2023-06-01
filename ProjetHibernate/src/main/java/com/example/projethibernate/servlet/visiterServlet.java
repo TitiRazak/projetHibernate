@@ -7,12 +7,11 @@ import com.example.projethibernate.DAO.visiterDAO;
 import com.example.projethibernate.entity.Medecin;
 import com.example.projethibernate.entity.Patient;
 import com.example.projethibernate.entity.Visiter;
-
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.annotation.WebServlet;
 
 import java.io.IOException;
 import java.sql.Date;

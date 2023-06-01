@@ -24,6 +24,11 @@ public class Patient {
     private String adresse;
 
     public Patient(String codepat, String nom, String prenom, String sexe, String adresse) {
+        this.codepat=codepat;
+        this.nom=nom;
+        this.prenom=prenom;
+        this.sexe=sexe;
+        this.adresse=adresse;
     }
 
     public Patient() {

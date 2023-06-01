@@ -1,6 +1,7 @@
 package com.example.projethibernate.entity;
 
 import jakarta.persistence.*;
+
 import java.sql.Date;
 
 @Entity
@@ -21,6 +22,15 @@ public class Visiter {
     @Column(name = "date")
     private Date date;
 
+    public Visiter(Medecin medecin, Patient patient, Date date) {
+        this.medecin=medecin;
+        this.patient=patient;
+        this.date=date;
+    }
+
+    public Visiter() {
+
+    }
     // Getters and Setters
 
     public Medecin getMedecin() {

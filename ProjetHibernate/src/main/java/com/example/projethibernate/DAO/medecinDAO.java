@@ -8,15 +8,6 @@ import java.util.List;
 
 public interface medecinDAO {
 
-    void addMedecin(Medecin medecin);
-
-
-    void updateMedecin(Medecin medecin);
-
-    void deleteMedecin(String codemed);
-
-    List<Medecin> getAllMedecins();
-
     static Medecin getMedecin(String codemed) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             return session.get(Medecin.class, codemed);
@@ -25,4 +16,12 @@ public interface medecinDAO {
             return null;
         }
     }
+
+    void addMedecin(Medecin medecin);
+
+    void updateMedecin(Medecin medecin);
+
+    void deleteMedecin(String codemed);
+
+    List<Medecin> getAllMedecins();
 }

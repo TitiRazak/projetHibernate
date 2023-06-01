@@ -3,7 +3,6 @@ package com.example.projethibernate.servlet;
 import com.example.projethibernate.DAO.patientController;
 import com.example.projethibernate.DAO.patientDAO;
 import com.example.projethibernate.entity.Patient;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

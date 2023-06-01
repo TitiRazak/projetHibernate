@@ -4,11 +4,11 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="com.example.projethibernate.entity.Visiter" table="VISITER">
-        <id name="codeMed" type="java.lang.String">
-            <column name="codemed"/>
+        <id name="medecin" type="java.lang.String">
+            <column name="medecin"/>
             <generator class="assigned"/>
         </id>
-        <property name="codePat" column="codepat"/>
+        <property name="patient" column="patient"/>
         <property name="date" column="date"/>
     </class>
 
