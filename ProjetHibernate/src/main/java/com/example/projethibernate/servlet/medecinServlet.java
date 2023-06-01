@@ -4,13 +4,15 @@ import com.example.projethibernate.DAO.medecinController;
 import com.example.projethibernate.DAO.medecinDAO;
 import com.example.projethibernate.entity.Medecin;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+@WebServlet("/medecinServlet")
 public class medecinServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -57,12 +59,12 @@ public class medecinServlet extends HttpServlet {
 
     private void updateMedecin(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
-        int codemed = Integer.parseInt(request.getParameter("codemed"));
+        String codemed = request.getParameter("codemed");
         String nom = request.getParameter("nom");
         String prenom = request.getParameter("prenom");
         String grade = request.getParameter("grade");
 
-        Medecin medecin = medecinDAO.getMedecin(codemed);
+        Medecin medecin = com.example.projethibernate.DAO.medecinDAO.getMedecin(codemed);
         if (medecin != null) {
             medecin.setNom(nom);
             medecin.setPrenom(prenom);
@@ -76,7 +78,7 @@ public class medecinServlet extends HttpServlet {
 
     private void deleteMedecin(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
-        int codemed = Integer.parseInt(request.getParameter("codemed"));
+        String codemed = request.getParameter("codemed");
 
         medecinDAO.deleteMedecin(codemed);
 
@@ -92,5 +94,3 @@ public class medecinServlet extends HttpServlet {
         request.getRequestDispatcher("/medecin.jsp").forward(request, response);
     }
 }
-
-

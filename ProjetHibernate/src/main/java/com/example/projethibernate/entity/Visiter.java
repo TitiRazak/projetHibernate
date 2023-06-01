@@ -1,40 +1,42 @@
 package com.example.projethibernate.entity;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.Table;
-
 import java.sql.Date;
 
 @Entity
-@Table(appliesTo = "visiter")
+@Table(name = "visiter")
+@IdClass(VisiterID.class)
 public class Visiter {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "codemed")
-    private String codeMed;
+    @ManyToOne
+    @JoinColumn(name = "codemed", referencedColumnName = "codemed")
+    private Medecin medecin;
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "codepat")
-    private String codePat;
+    @ManyToOne
+    @JoinColumn(name = "codepat", referencedColumnName = "codepat")
+    private Patient patient;
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "date")
     private Date date;
 
-    public String getCodeMed() {
-        return codeMed;
+    // Getters and Setters
+
+    public Medecin getMedecin() {
+        return medecin;
     }
 
-    public void setCodeMed(String codeMed) {
-        this.codeMed = codeMed;
+    public void setMedecin(Medecin medecin) {
+        this.medecin = medecin;
     }
 
-    public String getCodePat() {
-        return codePat;
+    public Patient getPatient() {
+        return patient;
     }
 
-    public void setCodePat(String codePat) {
-        this.codePat = codePat;
+    public void setPatient(Patient patient) {
+        this.patient = patient;
     }
 
     public Date getDate() {

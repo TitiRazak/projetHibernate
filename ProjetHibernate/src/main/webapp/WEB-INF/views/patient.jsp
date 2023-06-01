@@ -1,7 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ page import="java.util.List" %>
-<%@ page import="com.example.projethibernate.entity.Patient" %>
-<%@ page import="com.example.projethibernate.servlet.patientServlet" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,9 +28,9 @@
 <body>
 
 <h2>Ajouter ou mettre à jour un patient</h2>
-<form action="patientcontroller?action=add" method="post">
-    <label for="id">ID:</label>
-    <input type="text" id="id" name="id"><br><br>
+<form action="patientServlet?action=add" method="post">
+    <label for="codepat">Code:</label>
+    <input type="text" id="codepat" name="codepat"><br><br>
     <label for="nom">Nom:</label>
     <input type="text" id="nom" name="nom"><br><br>
     <label for="prenom">Prénom:</label>
@@ -50,10 +47,9 @@
 </form>
 
 
-
 <h1>Liste des patients</h1>
 
-<form action="patientcontroller" method="GET">
+<form action="patientServlet" method="GET">
     <input type="hidden" name="action" value="search">
     <label>
         <select name="searchType">
@@ -78,7 +74,6 @@
         <th>Adresse</th>
         <th>Actions</th>
     </tr>
-    <% List<Patient> patients = (List<Patient>) request.getAttribute("patients"); %>
     <jsp:useBean id="patients" scope="request" class="com.example.projethibernate.entity.Patient"
                  type="java.util.List"/>
     <c:forEach var="patient" items="${patients}">
@@ -89,7 +84,7 @@
             <td>${patient.getSexe()}</td>
             <td>${patient.getAdresse()}</td>
             <td>
-                <a href="patientcontroller?action=delete&codepat=${patient.getCodepat}">Supprimer</a>
+                <a href="patientServlet?action=delete&codepat=${patient.getCodepat()}">Supprimer</a>
             </td>
         </tr>
     </c:forEach>

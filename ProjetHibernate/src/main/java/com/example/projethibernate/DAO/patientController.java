@@ -54,7 +54,6 @@ public class patientController implements patientDAO {
         }
     }
 
-
     public List<Patient> getAllPatients() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         List<Patient> patients = session.createQuery("from Patient").list();

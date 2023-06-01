@@ -41,7 +41,7 @@ public class medecinController implements medecinDAO {
         }
     }
 
-    public void deleteMedecin(int codemed) {
+    public void deleteMedecin(String codemed) {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
@@ -53,15 +53,6 @@ public class medecinController implements medecinDAO {
                 transaction.rollback();
             }
             e.printStackTrace();
-        }
-    }
-
-    public Medecin getMedecin(int codemed) {
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            return session.get(Medecin.class, codemed);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
         }
     }
 

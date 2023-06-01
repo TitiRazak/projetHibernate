@@ -1,9 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<%@ page import="java.util.List" %>
-<%@ page import="com.example.projethibernate.entity.Medecin" %>
-<%@ page import="com.example.projethibernate.entity.Patient" %>
-<%@ page import="com.example.projethibernate.entity.Visiter" %>
 
 <!DOCTYPE html>
 <html>
@@ -34,24 +30,22 @@
 <body>
 <h1>Visiteurs</h1>
 
-<form action="visitercontroller?action=add" method="POST">
+<form action="visiterServlet" method="POST">
     <input type="hidden" name="action" value="add">
 
     <label for="codemed">Médecin:</label>
     <select id="codemed" name="codemed" required>
-        <jsp:useBean id="medecins" scope="request" class="com.example.projethibernate.entity.Medecin"
-                     type="java.util.List"/>
+        <jsp:useBean id="medecins" scope="request" class="com.example.projethibernate.entity.Medecin" type="java.util.List"/>
         <c:forEach var="medecin" items="${medecins}">
-            <option value="${medecin.getCodemed}">${medecin.nom} ${medecin.prenom}</option>
+            <option value="${medecin.codemed}">${medecin.nom} ${medecin.prenom}</option>
         </c:forEach>
     </select><br><br>
 
     <label for="codepat">Patient:</label>
     <select id="codepat" name="codepat" required>
-        <jsp:useBean id="patients" scope="request" class="com.example.projethibernate.entity.Patient"
-                     type="java.util.List"/>
+        <jsp:useBean id="patients" scope="request" class="com.example.projethibernate.entity.Patient" type="java.util.List"/>
         <c:forEach var="patient" items="${patients}">
-            <option value="${patient.getCodepat}">${patient.nom} ${patient.prenom}</option>
+            <option value="${patient.codepat}">${patient.nom} ${patient.prenom}</option>
         </c:forEach>
     </select><br><br>
 
@@ -68,10 +62,8 @@
         <th>Code médecin</th>
         <th>Code patient</th>
         <th>Date de visite</th>
-        <th>Actions</th>
     </tr>
-    <jsp:useBean id="visiters" scope="request" class="com.example.projethibernate.entity.Visiter"
-                 type="java.util.List"/>
+    <jsp:useBean id="visiters" scope="request" class="com.example.projethibernate.entity.Visiter" type="java.util.List"/>
     <c:forEach var="visiter" items="${visiters}">
         <tr>
             <td>${visiter.medecin.codemed}</td>

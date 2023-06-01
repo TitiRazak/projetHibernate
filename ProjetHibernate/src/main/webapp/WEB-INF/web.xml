@@ -4,34 +4,34 @@
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
          version="5.0">
 
-    <servlet>
-        <servlet-name>MedecinServlet</servlet-name>
-        <servlet-class>com.example.projethibernate.servlet.medecinServlet</servlet-class>
-    </servlet>
+<!--    <servlet>-->
+<!--        <servlet-name>medecinServlet</servlet-name>-->
+<!--        <servlet-class>com.example.projethibernate.servlet.medecinServlet</servlet-class>-->
+<!--    </servlet>-->
 
-    <servlet-mapping>
-        <servlet-name>MedecinServlet</servlet-name>
-        <url-pattern>/medecincontroller</url-pattern>
-    </servlet-mapping>
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>medecinServlet</servlet-name>-->
+<!--        <url-pattern>/medecinServlet</url-pattern>-->
+<!--    </servlet-mapping>-->
 
-    <servlet>
-        <servlet-name>PatientServlet</servlet-name>
-        <servlet-class>com.example.projethibernate.servlet.patientServlet</servlet-class>
-    </servlet>
+<!--    <servlet>-->
+<!--        <servlet-name>patientServlet</servlet-name>-->
+<!--        <servlet-class>com.example.projethibernate.servlet.patientServlet</servlet-class>-->
+<!--    </servlet>-->
 
-    <servlet-mapping>
-        <servlet-name>PatientServlet</servlet-name>
-        <url-pattern>/patientcontroller</url-pattern>
-    </servlet-mapping>
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>patientServlet</servlet-name>-->
+<!--        <url-pattern>/patientServlet</url-pattern>-->
+<!--    </servlet-mapping>-->
 
-    <servlet>
-        <servlet-name>VisiterServlet</servlet-name>
-        <servlet-class>com.example.projethibernate.servlet.visiterServlet</servlet-class>
-    </servlet>
+<!--    <servlet>-->
+<!--        <servlet-name>visiterServlet</servlet-name>-->
+<!--        <servlet-class>com.example.projethibernate.servlet.visiterServlet</servlet-class>-->
+<!--    </servlet>-->
 
-    <servlet-mapping>
-        <servlet-name>VisiterServlet</servlet-name>
-        <url-pattern>/visitercontroller</url-pattern>
-    </servlet-mapping>
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>visiterServlet</servlet-name>-->
+<!--        <url-pattern>/visiterServlet</url-pattern>-->
+<!--    </servlet-mapping>-->
 
 </web-app>

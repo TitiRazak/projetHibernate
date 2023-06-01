@@ -1,17 +1,19 @@
 package com.example.projethibernate.servlet;
 
-
 import com.example.projethibernate.DAO.patientController;
 import com.example.projethibernate.DAO.patientDAO;
 import com.example.projethibernate.entity.Patient;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
 import java.io.IOException;
 import java.util.List;
 
+@WebServlet("/patientServlet")
 public class patientServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -104,14 +106,14 @@ public class patientServlet extends HttpServlet {
 
     private void searchPatients(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String code = request.getParameter("parCode");
-        String nom = request.getParameter("parNom");
+        String searchType = request.getParameter("searchType");
+        String searchTerm = request.getParameter("searchTerm");
 
         List<Patient> patients = null;
-        if (code != null && code.equals("code")) {
-            patients = patientDAO.searchPatients(code, "");
-        } else if (nom != null && nom.equals("nom")) {
-            patients = patientDAO.searchPatients("", nom);
+        if (searchType != null && searchType.equals("code")) {
+            patients = patientDAO.searchPatients(searchTerm, "");
+        } else if (searchType != null && searchType.equals("nom")) {
+            patients = patientDAO.searchPatients("", searchTerm);
         }
 
         request.setAttribute("patients", patients);

@@ -1,17 +1,24 @@
 package com.example.projethibernate.servlet;
 
+import com.example.projethibernate.DAO.medecinDAO;
+import com.example.projethibernate.DAO.patientDAO;
 import com.example.projethibernate.DAO.visiterController;
 import com.example.projethibernate.DAO.visiterDAO;
+import com.example.projethibernate.entity.Medecin;
+import com.example.projethibernate.entity.Patient;
 import com.example.projethibernate.entity.Visiter;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.annotation.WebServlet;
+
 import java.io.IOException;
 import java.sql.Date;
 import java.util.List;
 
+@WebServlet("/visiterServlet")
 public class visiterServlet extends HttpServlet {
     private visiterDAO visiterDAO;
 
@@ -34,16 +41,22 @@ public class visiterServlet extends HttpServlet {
         String action = request.getParameter("action");
 
         if ("add".equals(action)) {
-            String codemed = request.getParameter("codemed");
-            String codepat = request.getParameter("codepat");
+            String medecinId = request.getParameter("codemed");
+            String patientId = request.getParameter("codepat");
             String date = request.getParameter("date");
 
-            Visiter visiter = new Visiter();
-            visiter.setCodeMed(codemed);
-            visiter.setCodePat(codepat);
-            visiter.setDate(Date.valueOf(date));
+            // Retrieve Medecin and Patient records from the database
+            Medecin medecin = medecinDAO.getMedecin(medecinId);
+            Patient patient = patientDAO.getPatient(patientId);
 
-            visiterDAO.addVisiter(visiter);
+            if (medecin != null && patient != null) {
+                Visiter visiter = new Visiter();
+                visiter.setMedecin(medecin);
+                visiter.setPatient(patient);
+                visiter.setDate(Date.valueOf(date));
+
+                visiterDAO.addVisiter(visiter);
+            }
         }
 
         List<Visiter> visiters = visiterDAO.getAllVisites();
